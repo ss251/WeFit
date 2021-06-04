@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/calendarFragment">
+    <fragment
+        android:id="@+id/goalsFragment"
+        android:name="edu.uw.ss251.wefit.GoalsFragment"
+        android:label="fragment_goals"
+        tools:layout="@layout/fragment_goals" />
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="edu.uw.ss251.wefit.CalendarFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" />
+    <fragment
+        android:id="@+id/addExerciseFragment"
+        android:name="edu.uw.ss251.wefit.AddExerciseFragment"
+        android:label="fragment_add_exercise"
+        tools:layout="@layout/fragment_add_exercise" />
+    <action
+        android:id="@+id/action_global_addExerciseFragment"
+        app:destination="@id/addExerciseFragment" />
+    <action
+        android:id="@+id/action_global_calendarFragment"
+        app:destination="@id/calendarFragment" />
+    <action
+        android:id="@+id/action_global_goalsFragment"
+        app:destination="@id/goalsFragment" />
+    <fragment
+        android:id="@+id/dietLogFragment"
+        android:name="edu.uw.ss251.wefit.DietLogFragment"
+        android:label="fragment_diet_log"
+        tools:layout="@layout/fragment_diet_log" />
+    <action
+        android:id="@+id/action_global_dietLogFragment"
+        app:destination="@id/dietLogFragment" />
+</navigation>
