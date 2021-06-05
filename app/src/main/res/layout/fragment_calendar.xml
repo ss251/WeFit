@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".CalendarFragment">
+    tools:context=".CalendarFragment"
+    android:padding="12dp">
 
     <Button
         android:id="@+id/button2"
@@ -13,4 +14,50 @@
         android:text="Button"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+    <CalendarView
+        android:id="@+id/cvCalendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/cvCalendar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/tvExercise"
+        android:text="Exercise Tracking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvActivities"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvExercise"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_activity"
+        />
+    <TextView
+        android:id="@+id/tvDiet"
+        app:layout_constraintTop_toBottomOf="@+id/rvActivities"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diet Tracking"
+        android:textSize="20sp"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDiets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvDiet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_diet"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
