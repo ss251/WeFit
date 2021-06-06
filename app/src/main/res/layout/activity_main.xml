@@ -38,6 +38,8 @@
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/ibCalendar"
+                app:tint="@android:color/white"
+                android:backgroundTint="@color/orange_700"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
@@ -52,6 +54,8 @@
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fbDiet"
+                app:tint="@android:color/white"
+                android:backgroundTint="@color/orange_700"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
@@ -66,6 +70,8 @@
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fbAdd"
+                app:tint="@android:color/white"
+                android:backgroundTint="@color/orange_700"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
@@ -80,6 +86,8 @@
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/ibGoals"
+                app:tint="@android:color/white"
+                android:backgroundTint="@color/orange_700"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
