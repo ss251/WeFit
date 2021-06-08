@@ -17,7 +17,7 @@ class WeFitApplication: Application() {
 
 		dataRepository = DataRepository()
 
-		Toast.makeText(this, "Dotify loaded", Toast.LENGTH_SHORT).show()
+		// Toast.makeText(this, "WeFit loaded", Toast.LENGTH_SHORT).show()
 	}
 
 	var userName = "Guest"
