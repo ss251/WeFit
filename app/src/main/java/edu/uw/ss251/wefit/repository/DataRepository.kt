@@ -39,13 +39,13 @@ class DataRepository {
 interface NutritionService {
 
     @Headers(
-        "Ocp-Apim-Subscription-Key: b2ea5b5cc0304324b0db738af48fe0a9"
+        "Ocp-Apim-Subscription-Key: 01d6d4552e504c9e865f2f3c459ae196"
     )
     @GET("foods?count=1&start=0&spell=true&")
     suspend fun getNutrition(@Query("query") query: String): Food
 
     @Headers(
-        "Ocp-Apim-Subscription-Key: b2ea5b5cc0304324b0db738af48fe0a9"
+        "Ocp-Apim-Subscription-Key: 01d6d4552e504c9e865f2f3c459ae196"
     )
     @GET("food/{uri}")
     suspend fun getFood(@Path("uri") uri: String): Diet
