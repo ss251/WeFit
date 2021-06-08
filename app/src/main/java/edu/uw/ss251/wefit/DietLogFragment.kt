@@ -10,6 +10,8 @@ import edu.uw.ss251.wefit.WeFitApplication
 
 import edu.uw.ss251.wefit.databinding.FragmentDietLogBinding
 import edu.uw.ss251.wefit.model.Nutrients
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class DietLogFragment : Fragment() {
@@ -26,26 +28,20 @@ class DietLogFragment : Fragment() {
 
         with(binding) {
 
-            addDiet.setOnClickListener {
-                binding.dietText.text = dietText.text
-                lifecycleScope.launch {
 
-                    dataRepository.dietLog = dietText.text.toString()
-                    val food = dataRepository.getNutrition()
-                    binding.food.text = "Food: " + food.query
-                    val items = dataRepository.getNutrition()
-                    val item = dataRepository.getFood().nutrient_data.last().value
-
-                    calories.text = "Calories: " + item
-                }
-            }
 
             lifecycleScope.launch {
+
+                addDiet.setOnClickListener {
+                    binding.dietText.text = dietText.text
+                    dataRepository.dietLog = dietText.text.toString()
+
+                    food.text = dietText.text
+                }
 
                 dataRepository.dietLog = dietText.text.toString()
                 val food = dataRepository.getNutrition()
                 binding.food.text = "Food: " + food.query
-
 
 
                 val items = dataRepository.getNutrition()
