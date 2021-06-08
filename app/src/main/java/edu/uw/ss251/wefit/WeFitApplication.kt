@@ -10,4 +10,6 @@ class WeFitApplication: Application() {
 	var userName = "Guest"
 	var weight = 0.0 // kgs
 
+//	var activityMap = mutableMapOf<String, List<MutableMap<String, String>>>()
+
 }

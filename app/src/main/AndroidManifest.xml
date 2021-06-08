@@ -10,11 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WeFit">
-        <activity android:name=".GetNameActivity"></activity>
-        <activity android:name=".name_activity" />
-        <activity android:name=".WeightActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
+        <activity android:name=".onboard.WeightActivity" />
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".onboard.GetNameActivity">
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
