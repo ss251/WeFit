@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import edu.uw.ss251.wefit.WeFitApplication
 
@@ -32,14 +33,16 @@ class DietLogFragment : Fragment() {
                     // dataRepository.dietLog = dietText.text.toString()
                     dataRepository.dietLog = dietText.text.toString()
                     lifecycleScope.launch {
-                        // val food = dataRepository.getNutrition()
-                        binding.food.text = "Food: " + dietText.text
+                        runCatching {
+                            // val food = dataRepository.getNutrition()
+                            binding.food.text = "Food: " + dietText.text
 
 
-                        val items = dataRepository.getNutrition()
-                        val item = dataRepository.getFood().nutrient_data.last().value
+                            val items = dataRepository.getNutrition()
+                            val item = dataRepository.getFood().nutrient_data.last().value
 
-                        calories.text = "Calories: " + item
+                            calories.text = "Calories: " + item
+                        }.onFailure { Toast.makeText(activity, "Please wait one minute before adding another item.", Toast.LENGTH_SHORT).show() }
                     }
                     // food.text = dietText.text
             }
