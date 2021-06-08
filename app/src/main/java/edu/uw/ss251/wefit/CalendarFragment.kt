@@ -8,14 +8,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import edu.uw.ss251.wefit.databinding.FragmentCalendarBinding
+import edu.uw.ss251.wefit.model.ActivityObj
+import edu.uw.ss251.wefit.model.DietObj
 import java.util.*
 
-val activitiesMap = mutableMapOf("6/5/2021" to mutableListOf(Activity("fdsa")))
-
-private var selectedActivites: MutableList<Activity> = mutableListOf()
-private var selectedDiets: MutableList<Diet> = mutableListOf()
 
 class CalendarFragment : Fragment() {
+    private var selectedActivites: MutableList<ActivityObj> = mutableListOf()
+    private var selectedDiets: MutableList<DietObj> = mutableListOf()
+    private val application by lazy { context?.applicationContext as WeFitApplication}
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,20 +30,33 @@ class CalendarFragment : Fragment() {
             val dietAdapter = DietListAdapter(selectedDiets)
             rvActivities.adapter = activityAdapter
             cvCalendar.setOnDateChangeListener { view, year, month, dayOfMonth ->
-                val actualMonth = month + 1
-                val lmao = "$actualMonth/$dayOfMonth/$year"
-                val activities = activitiesMap[lmao]
-                if(activities == null) {
-                    selectedActivites = mutableListOf()
-                } else {
-                    selectedActivites = activities
-                }
-                activityAdapter.updateActivities(selectedActivites)
+                onDateChange(year, month, dayOfMonth, activityAdapter, dietAdapter)
             }
         }
         return binding.root
     }
+
+    fun onDateChange(year : Int,
+         month: Int,
+         dayOfMonth: Int,
+         activityAdapter: ActivityListAdapter,
+         dietAdapter: DietListAdapter) {
+        val actualMonth = month + 1
+        val date = "$actualMonth/$dayOfMonth/$year"
+        val activities = application.activityMap[date]
+        val diets = application.dietMap[date]
+        if(activities == null) {
+            selectedActivites = mutableListOf()
+        } else {
+            selectedActivites = activities
+        }
+        if(diets == null) {
+            selectedDiets = mutableListOf()
+        } else {
+            selectedDiets = diets
+        }
+        activityAdapter.updateActivities(selectedActivites)
+        dietAdapter.updateDiets(selectedDiets)
+    }
 }
 
-data class Activity(val name: String)
-data class Diet(val name: String)
