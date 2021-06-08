@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import edu.uw.ss251.wefit.WeFitApplication
 
 import edu.uw.ss251.wefit.databinding.FragmentDietLogBinding
+import edu.uw.ss251.wefit.model.Nutrients
 import kotlinx.coroutines.launch
 
 class DietLogFragment : Fragment() {
@@ -24,12 +25,33 @@ class DietLogFragment : Fragment() {
         val binding = FragmentDietLogBinding.inflate(inflater)
 
         with(binding) {
+
+            addDiet.setOnClickListener {
+                binding.dietText.text = dietText.text
+                lifecycleScope.launch {
+
+                    dataRepository.dietLog = dietText.text.toString()
+                    val food = dataRepository.getNutrition()
+                    binding.food.text = "Food: " + food.query
+                    val items = dataRepository.getNutrition()
+                    val item = dataRepository.getFood().nutrient_data.last().value
+
+                    calories.text = "Calories: " + item
+                }
+            }
+
             lifecycleScope.launch {
+
+                dataRepository.dietLog = dietText.text.toString()
                 val food = dataRepository.getNutrition()
                 binding.food.text = "Food: " + food.query
 
-                val items = dataRepository.getNutrition().items[0].toString()
-                // val item = dataRepository.getFood(items)
+
+
+                val items = dataRepository.getNutrition()
+                val item = dataRepository.getFood().nutrient_data.last().value
+
+                calories.text = "Calories: " + item
             }
         }
 
