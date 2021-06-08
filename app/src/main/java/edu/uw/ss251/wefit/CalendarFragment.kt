@@ -10,13 +10,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import edu.uw.ss251.wefit.databinding.FragmentCalendarBinding
-import edu.uw.ss251.wefit.model.ActivityObj
+import edu.uw.ss251.wefit.model.Exercise
 import edu.uw.ss251.wefit.model.DietObj
 import java.util.*
 
 
 class CalendarFragment : Fragment() {
-    private var selectedActivites: MutableList<ActivityObj> = mutableListOf()
+    private var selectedActivites: MutableList<Exercise> = mutableListOf()
     private var selectedDiets: MutableList<DietObj> = mutableListOf()
     private val application by lazy { context?.applicationContext as WeFitApplication}
     private val activityAdapter = ActivityListAdapter(selectedActivites)
