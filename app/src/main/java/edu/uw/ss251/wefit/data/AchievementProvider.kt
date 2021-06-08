@@ -6,7 +6,7 @@ object AchievementProvider {
 
     val listOfAchievements = listOf(
         Achievement("Getting started!", true),
-        Achievement("Two days in a row!", false),
+        Achievement("Two days! Keep it up!", false),
         Achievement("Your first week: COMPLETE", false),
         Achievement("One month down, a lifetime to go.", false),
         Achievement("Has it been a year already?", false),

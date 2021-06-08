@@ -18,10 +18,12 @@ const val INTENSITY = 5
 class AddExerciseFragment : Fragment() {
 
     private var userWeight = 0.0
-    lateinit var currMap: MutableMap<String, MutableList<Exercise>>
+    private lateinit var currMap: MutableMap<String, MutableList<Exercise>>
+    private lateinit var myApp: WeFitApplication
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        val myApp = context.applicationContext as WeFitApplication
+        myApp = context.applicationContext as WeFitApplication
         userWeight = myApp.weight
         currMap = myApp.activityMap
     }

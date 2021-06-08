@@ -21,6 +21,7 @@ class CalendarFragment : Fragment() {
     private val application by lazy { context?.applicationContext as WeFitApplication}
     private val activityAdapter = ActivityListAdapter(selectedActivites)
     private val dietAdapter = DietListAdapter(selectedDiets)
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
