@@ -27,27 +27,21 @@ class DietLogFragment : Fragment() {
         val binding = FragmentDietLogBinding.inflate(inflater)
 
         with(binding) {
-
-
-
-            lifecycleScope.launch {
-
                 addDiet.setOnClickListener {
                     binding.dietText.text = dietText.text
+                    // dataRepository.dietLog = dietText.text.toString()
                     dataRepository.dietLog = dietText.text.toString()
-
-                    food.text = dietText.text
-                }
-
-                dataRepository.dietLog = dietText.text.toString()
-                val food = dataRepository.getNutrition()
-                binding.food.text = "Food: " + food.query
+                    lifecycleScope.launch {
+                        // val food = dataRepository.getNutrition()
+                        binding.food.text = "Food: " + dietText.text
 
 
-                val items = dataRepository.getNutrition()
-                val item = dataRepository.getFood().nutrient_data.last().value
+                        val items = dataRepository.getNutrition()
+                        val item = dataRepository.getFood().nutrient_data.last().value
 
-                calories.text = "Calories: " + item
+                        calories.text = "Calories: " + item
+                    }
+                    // food.text = dietText.text
             }
         }
 
