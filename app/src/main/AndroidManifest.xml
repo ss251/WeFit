@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.uw.ss251.wefit">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".WeFitApplication"
         android:allowBackup="true"

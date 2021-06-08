@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
             fbDiet.setOnClickListener{
                 navController.navigate(NavGraphDirections.actionGlobalDietLogFragment())
             }
+            fbDiet.setOnClickListener{
+                navController.navigate(NavGraphDirections.actionGlobalDietLogFragment())
+            }
         }
 
     }
