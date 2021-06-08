@@ -1,16 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddExerciseFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AddExerciseFragment"
+    android:paddingTop="20dp"
+    >
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switch1"
+    <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:paddingTop="20dp"
+        android:text="Activity Tracker"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="Switch" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editActivityDuration"
+        android:layout_width="268dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activityDuration" />
+
+    <TextView
+        android:id="@+id/minAdornement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="min"
+        android:textColor="@color/orange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toEndOf="@id/editActivityDuration"
+        app:layout_constraintTop_toBottomOf="@id/activityDuration" />
+
+    <TextView
+        android:id="@+id/activityDuration"
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Duration"
+        android:textColor="@color/orange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editActivityName" />
+
+    <EditText
+        android:id="@+id/editActivityName"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activityName" />
+
+    <TextView
+        android:id="@+id/activityName"
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Activity"
+        android:textColor="@color/orange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+
+    <TextView
+        android:id="@+id/caloriesBurnedTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calories Burned"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@id/caloriesBurned"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editActivityDuration" />
+
+    <TextView
+        android:id="@+id/caloriesBurned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="0"
+        android:textColor="@color/orange"
+        android:textSize="100sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/caloriesBurnedTitle" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:visibility="visible"
+        android:backgroundTint="@color/orange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/caloriesBurned"
+        />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
