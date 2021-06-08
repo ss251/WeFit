@@ -61,20 +61,20 @@ class DietLogFragment : Fragment() {
                             val item = dataRepository.getFood().nutrient_data.last().value
 
                             calories.text = "Calories: " + item
-//                            val today = Calendar.getInstance()
-//                            val year = today.get(Calendar.YEAR)
-//                            val month = today.get(Calendar.MONTH)
-//                            val day = today.get(Calendar.DAY_OF_MONTH)
-//                            val todayDate = "$month/" +
-//                                    "$day/" +
-//                                    "$year"
-//                            Log.i("fdsa", todayDate)
-//                            val dietToAdd = DietObj(dietText.text.toString(), item.toInt())
-//                            if(dietMap[todayDate] == null) {
-//                                dietMap[todayDate] = mutableListOf(dietToAdd)
-//                            } else {
-//                                dietMap[todayDate]?.add(dietToAdd)
-//                            }
+                            val today = Calendar.getInstance()
+                            val year = today.get(Calendar.YEAR)
+                            val month = today.get(Calendar.MONTH)
+                            val day = today.get(Calendar.DAY_OF_MONTH)
+                            val todayDate = "$month/" +
+                                    "$day/" +
+                                    "$year"
+                            Log.i("fdsa", todayDate)
+                            val dietToAdd = DietObj(dietText.text.toString(), item.toInt())
+                            if(dietMap[todayDate] == null) {
+                                dietMap[todayDate] = mutableListOf(dietToAdd)
+                            } else {
+                                dietMap[todayDate]?.add(dietToAdd)
+                            }
                         }.onFailure { Toast.makeText(activity, "Please wait one minute before adding another item.", Toast.LENGTH_SHORT).show() }
                     }
                     // food.text = dietText.text

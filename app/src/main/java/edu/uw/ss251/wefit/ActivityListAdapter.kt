@@ -20,8 +20,8 @@ class ActivityListAdapter(private var listOfActivities: List<Exercise>): Recycle
 
         // Setting each item view
         with(holder.binding) {
-            tvName.text = activity.name
-            tvCalories.text = "${activity.calories_burned} calories burned"
+            tvName.text = "${activity.name}: "
+            tvCalories.text = "${activity.calories_burned} calories burned | "
             tvDuration.text = "${activity.duration} mins"
         }
     }

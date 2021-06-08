@@ -58,26 +58,27 @@ class AddExerciseFragment : Fragment() {
             }
 
             add.setOnClickListener {
+                val activityName = editActivityName.text.toString()
+                val duration = editActivityDuration.text.toString().toInt()
+                calcedCaloriesBurned = calcCalories(duration, INTENSITY)
+                var date = Calendar.getInstance();
+                var dateString = date.get(Calendar.MONTH).toString() + "/" + date.get(Calendar.DAY_OF_MONTH).toString() + "/" + date.get(Calendar.YEAR).toString()
+                val exerciseToAdd = Exercise(
+                    activityName,
+                    duration,
+                    calcedCaloriesBurned
+                )
+                if (currMap.get(dateString) == null) {
+                    currMap[dateString] =
+                        mutableListOf(exerciseToAdd)
+                } else {
+                    currMap[dateString]?.add(exerciseToAdd)
+                }
+                Log.i("fdsa", exerciseToAdd.toString())
+                Toast.makeText(activity, "Activity Succesfully Logged", Toast.LENGTH_SHORT).show()
                 editActivityDuration.setText("0")
                 editActivityName.text.clear()
                 calcedCaloriesBurned = 0
-                var date = Calendar.getInstance();
-                var dateString = date.get(Calendar.MONTH).toString() + "/" + date.get(Calendar.DAY_OF_MONTH).toString() + "/" + date.get(Calendar.YEAR).toString()
-                if (currMap.get(dateString)?.size ?: 0 >= 1) {
-                    currMap[dateString] =
-                        mutableListOf(Exercise(exerciseName, duration.toInt(), calcedCaloriesBurned))
-                    Log.i("LEBRON JAMES EXISTED", currMap.toString())
-                } else {
-                    currMap[dateString]?.add(
-                        Exercise(
-                            exerciseName,
-                            duration.toInt(),
-                            calcedCaloriesBurned
-                        ))
-                    Log.i("LEBRON JAMES ADDED", currMap.toString())
-                }
-
-                Toast.makeText(activity, "Activity Succesfully Logged", Toast.LENGTH_SHORT).show()
             }
         }
         return binding.root

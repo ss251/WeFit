@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".AddExerciseFragment"
-    android:paddingTop="20dp"
+    android:paddingTop="5dp"
     >
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="20dp"
+        android:paddingTop="10dp"
         android:text="Activity Tracker"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
