@@ -4,8 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import edu.uw.ss251.wefit.databinding.ItemActivityBinding
+import edu.uw.ss251.wefit.model.ActivityObj
 
-class ActivityListAdapter(private var listOfActivities: List<Activity>): RecyclerView.Adapter<ActivityListAdapter.ActivityViewHolder>() {
+class ActivityListAdapter(private var listOfActivities: List<ActivityObj>): RecyclerView.Adapter<ActivityListAdapter.ActivityViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActivityViewHolder {
         val binding = ItemActivityBinding.inflate(LayoutInflater.from(parent.context))
         return ActivityViewHolder(binding)
@@ -18,11 +19,13 @@ class ActivityListAdapter(private var listOfActivities: List<Activity>): Recycle
 
         // Setting each item view
         with(holder.binding) {
-            tvName.text = activity.name
+            tvName.text = activity.activity
+            tvCalories.text = "${activity.calories} calories burned"
+            tvDuration.text = "${activity.duration} mins"
         }
     }
 
-    fun updateActivities(newList: List<Activity>) {
+    fun updateActivities(newList: List<ActivityObj>) {
         this.listOfActivities = newList
         notifyDataSetChanged()
     }

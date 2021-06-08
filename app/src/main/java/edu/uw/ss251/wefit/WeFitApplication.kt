@@ -9,8 +9,8 @@ import edu.uw.ss251.wefit.repository.DataRepository
 class WeFitApplication: Application() {
 
 	lateinit var dataRepository: DataRepository
-	var dietMap : MutableMap<String, DietObj> = mutableMapOf()
-	var activityMap : MutableMap<String, ActivityObj> = mutableMapOf()
+	var dietMap : MutableMap<String, MutableList<DietObj>> = mutableMapOf()
+	var activityMap : MutableMap<String, MutableList<ActivityObj>> = mutableMapOf()
 
 	override fun onCreate() {
 		super.onCreate()
