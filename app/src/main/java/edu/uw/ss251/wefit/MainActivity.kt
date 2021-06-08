@@ -15,15 +15,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).apply { setContentView(root) }
         with(binding) {
-            fbAdd.setOnClickListener{
+            fbExercise.setOnClickListener{
                 navController.navigate(NavGraphDirections.actionGlobalAddExerciseFragment())
             }
-            ibCalendar.setOnClickListener{
+            fbCalendar.setOnClickListener{
                 navController.navigate(NavGraphDirections.actionGlobalCalendarFragment())
             }
-            ibGoals.setOnClickListener{
-                navController.navigate(NavGraphDirections.actionGlobalGoalsFragment())
+            fbStats.setOnClickListener{
+                navController.navigate(NavGraphDirections.actionGlobalStatsFragment())
+            }
+            fbDiet.setOnClickListener{
+                navController.navigate(NavGraphDirections.actionGlobalDietLogFragment())
             }
         }
+
     }
+
 }

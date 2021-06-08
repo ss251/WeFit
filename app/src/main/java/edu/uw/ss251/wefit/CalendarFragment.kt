@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import edu.uw.ss251.wefit.databinding.FragmentCalendarBinding
-import edu.uw.ss251.wefit.databinding.FragmentGoalsBinding
 import java.util.*
 
 val activitiesMap = mutableMapOf("6/5/2021" to mutableListOf(Activity("fdsa")))

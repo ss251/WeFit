@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import edu.uw.ss251.wefit.databinding.FragmentAddExerciseBinding
-import edu.uw.ss251.wefit.databinding.FragmentGoalsBinding
 
 class AddExerciseFragment : Fragment() {
     override fun onCreateView(

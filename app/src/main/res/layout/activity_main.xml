@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:padding="12dp">
+    android:padding="12dp"
+    android:id="@+id/activityMain">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/navHost"
@@ -18,6 +19,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/navBar"/>
+
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:id="@+id/navBar"
@@ -37,7 +43,7 @@
             android:layout_weight="1">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/ibCalendar"
+                android:id="@+id/fbCalendar"
                 app:tint="@android:color/white"
                 android:backgroundTint="@color/orange_700"
                 android:layout_width="wrap_content"
@@ -69,7 +75,7 @@
                 app:srcCompat="@drawable/ic_baseline_food_bank_24" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fbAdd"
+                android:id="@+id/fbExercise"
                 app:tint="@android:color/white"
                 android:backgroundTint="@color/orange_700"
                 android:layout_width="wrap_content"
@@ -85,7 +91,7 @@
                 app:srcCompat="@drawable/ic_baseline_run_circle_24" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/ibGoals"
+                android:id="@+id/fbStats"
                 app:tint="@android:color/white"
                 android:backgroundTint="@color/orange_700"
                 android:layout_width="wrap_content"
@@ -100,35 +106,6 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:srcCompat="@drawable/ic_baseline_star_24" />
-
-
-
-
-
-
-
-            <!--            <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-            <!--                android:id="@+id/fbAddExercise"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:clickable="true"-->
-            <!--                app:layout_constraintStart_toStartOf="parent"-->
-            <!--                app:layout_constraintEnd_toEndOf="parent"-->
-            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--                app:srcCompat="@android:drawable/ic_menu_edit" />-->
-
-            <!--            <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-            <!--                android:id="@+id/fbAddDiet"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:clickable="true"-->
-            <!--                app:layout_constraintStart_toStartOf="parent"-->
-            <!--                app:layout_constraintEnd_toEndOf="parent"-->
-            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--                app:srcCompat="@android:drawable/ic_menu_sort_alphabetically"/>-->
-
-            <!--            TODO: create an expandable action button for diet logging and activity logging-->
-            <!--            howto: https://www.youtube.com/watch?v=umCX1-Tq25k&ab_channel=Stevdza-San-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

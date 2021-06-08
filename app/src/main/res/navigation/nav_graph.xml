@@ -4,11 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/calendarFragment">
-    <fragment
-        android:id="@+id/goalsFragment"
-        android:name="edu.uw.ss251.wefit.GoalsFragment"
-        android:label="fragment_goals"
-        tools:layout="@layout/fragment_goals" />
+
     <fragment
         android:id="@+id/calendarFragment"
         android:name="edu.uw.ss251.wefit.CalendarFragment"
@@ -25,9 +21,6 @@
     <action
         android:id="@+id/action_global_calendarFragment"
         app:destination="@id/calendarFragment" />
-    <action
-        android:id="@+id/action_global_goalsFragment"
-        app:destination="@id/goalsFragment" />
     <fragment
         android:id="@+id/dietLogFragment"
         android:name="edu.uw.ss251.wefit.DietLogFragment"
@@ -36,4 +29,12 @@
     <action
         android:id="@+id/action_global_dietLogFragment"
         app:destination="@id/dietLogFragment" />
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="edu.uw.ss251.wefit.StatsFragment"
+        android:label="fragment_stats"
+        tools:layout="@layout/fragment_stats" />
+    <action
+        android:id="@+id/action_global_statsFragment"
+        app:destination="@id/statsFragment" />
 </navigation>
