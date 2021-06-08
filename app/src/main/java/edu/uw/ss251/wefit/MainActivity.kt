@@ -2,7 +2,6 @@ package edu.uw.ss251.wefit
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.NavGraphBuilder
 import androidx.navigation.findNavController
 import edu.uw.ss251.wefit.databinding.ActivityMainBinding
 
@@ -15,21 +14,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).apply { setContentView(root) }
         with(binding) {
-            fbExercise.setOnClickListener{
-                navController.navigate(NavGraphDirections.actionGlobalAddExerciseFragment())
-            }
-            fbCalendar.setOnClickListener{
-                navController.navigate(NavGraphDirections.actionGlobalCalendarFragment())
-            }
-            fbStats.setOnClickListener{
-                navController.navigate(NavGraphDirections.actionGlobalStatsFragment())
-            }
-            fbDiet.setOnClickListener{
-                navController.navigate(NavGraphDirections.actionGlobalDietLogFragment())
-            }
-            fbDiet.setOnClickListener{
-                navController.navigate(NavGraphDirections.actionGlobalDietLogFragment())
-            }
+            fbExercise.setOnClickListener{ navController.navigate(NavGraphDirections.actionGlobalAddExerciseFragment()) }
+            fbCalendar.setOnClickListener{ navController.navigate(NavGraphDirections.actionGlobalCalendarFragment()) }
+            fbStats.setOnClickListener{ navController.navigate(NavGraphDirections.actionGlobalStatsFragment()) }
+            fbDiet.setOnClickListener{ navController.navigate(NavGraphDirections.actionGlobalDietLogFragment()) }
         }
 
     }

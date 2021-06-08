@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="12dp"
     tools:context=".AchievementsActivity">
 
     <TextView
         android:id="@+id/tvCompletion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0 down, 100 to go"
+        android:text="@string/achievement_progression"
         android:textSize="40sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/rvAchievements"

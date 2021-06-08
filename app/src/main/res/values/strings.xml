@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">WeFit</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="achievement_progression">%s / 6</string>
 </resources>

@@ -26,6 +26,8 @@ class AchievementsActivity : AppCompatActivity() {
             val achievements = AchievementProvider.listOfAchievements
             val adapter = AchievementListAdapter(achievements)
             rvAchievements.adapter = adapter
+
+            tvCompletion.text = root.context.getString(R.string.achievement_progression, AchievementProvider.getNumCompleted())
         }
 
         // adds back button to activity and sets title
