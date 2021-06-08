@@ -21,14 +21,16 @@
 
     <EditText
         android:id="@+id/editActivityDuration"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.226"
+        app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/activityDuration" />
+        app:layout_constraintTop_toBottomOf="@id/activityDuration"
+        app:layout_constraintBottom_toTopOf="@id/intensityTitle"
+        />
 
     <TextView
         android:id="@+id/activityDuration"
@@ -36,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Duration"
+        android:textColor="@color/orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.201"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,11 +46,11 @@
 
     <EditText
         android:id="@+id/editActivityName"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.226"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/activityName" />
 
@@ -57,51 +60,57 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Activity"
+        android:textColor="@color/orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.201"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/intensityTitle"-->
-<!--        android:layout_width="120sp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Intensity"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/radioGroup"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.201"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/editActivityDuration" />-->
+    <TextView
+        android:id="@+id/intensityTitle"
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:text="Intensity"
+        android:textColor="@color/orange"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editActivityDuration"
+        app:layout_constraintVertical_bias="1.0" />
 
-<!--    <RadioGroup-->
-<!--        android:id="@+id/radioGroup"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/editActivityDuration"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/caloriesBurnedTitle"-->
-<!--        android:orientation="horizontal">-->
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_marginStart="50dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/editActivityDuration"
+        app:layout_constraintBottom_toTopOf="@id/caloriesBurnedTitle"
+        android:orientation="horizontal">
 
-<!--        <RadioButton-->
-<!--            android:id="@+id/lowIntensity"-->
-<!--            android:layout_width="137dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:onClick="onRadioButtonClicked"-->
-<!--            android:text="Low" />-->
+        <RadioButton
+            android:id="@+id/lowIntensity"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Low" />
 
-<!--        <RadioButton-->
-<!--            android:id="@+id/medIntensity"-->
-<!--            android:layout_width="148dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:onClick="onRadioButtonClicked"-->
-<!--            android:text="Med" />-->
+        <RadioButton
+            android:id="@+id/medIntensity"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Med" />
 
-<!--        <RadioButton-->
-<!--            android:id="@+id/highIntensity"-->
-<!--            android:layout_width="114dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:onClick="onRadioButtonClicked"-->
-<!--            android:text="High" />-->
-<!--    </RadioGroup>-->
+        <RadioButton
+            android:id="@+id/highIntensity"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="High" />
+    </RadioGroup>
 
 
     <TextView
@@ -111,10 +120,11 @@
         android:layout_marginTop="64dp"
         android:text="Calories Burned"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/caloriesBurned"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editActivityDuration" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <TextView
         android:id="@+id/caloriesBurned"
@@ -122,19 +132,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:text="0"
+        android:textColor="@color/orange"
         android:textSize="100sp"
         android:visibility="visible"
-        android:textColor="@color/orange"
+        app:layout_constraintBottom_toTopOf="@id/add"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/caloriesBurnedTitle"
-        />
+        app:layout_constraintTop_toBottomOf="@id/caloriesBurnedTitle" />
 
     <Button
+        android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add"
-        android:visibility="invisible"
+        android:visibility="visible"
+        android:backgroundTint="@color/orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
