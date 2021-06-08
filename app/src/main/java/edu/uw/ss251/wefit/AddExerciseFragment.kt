@@ -1,6 +1,5 @@
 package edu.uw.ss251.wefit
 
-import android.R
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
@@ -11,16 +10,20 @@ import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import edu.uw.ss251.wefit.databinding.FragmentAddExerciseBinding
+import edu.uw.ss251.wefit.model.Exercise
+import java.util.*
 
 const val INTENSITY = 5
 
 class AddExerciseFragment : Fragment() {
 
     private var userWeight = 0.0
+    lateinit var currMap: MutableMap<String, MutableList<Exercise>>
     override fun onAttach(context: Context) {
         super.onAttach(context)
         val myApp = context.applicationContext as WeFitApplication
         userWeight = myApp.weight
+        currMap = myApp.activityMap
     }
 
     override fun onCreateView(
@@ -58,6 +61,23 @@ class AddExerciseFragment : Fragment() {
                 editActivityDuration.setText("0")
                 editActivityName.text.clear()
                 calcedCaloriesBurned = 0
+                var date = Calendar.getInstance();
+                var dateString = date.get(Calendar.MONTH).toString() + "/" + date.get(Calendar.DAY_OF_MONTH).toString() + "/" + date.get(Calendar.YEAR).toString()
+                if (currMap.get(dateString)?.size ?: 0 >= 1) {
+                    currMap[dateString] =
+                        mutableListOf(Exercise(exerciseName, duration.toInt(), calcedCaloriesBurned))
+                    Log.i("LEBRON JAMES EXISTED", currMap.toString())
+                } else {
+                    currMap[dateString]?.add(
+                        Exercise(
+                            exerciseName,
+                            duration.toInt(),
+                            calcedCaloriesBurned
+                        ))
+                    Log.i("LEBRON JAMES ADDED", currMap.toString())
+                }
+
+//                currMap.put(dateString, mutableListOf(Exercise(exerciseName, duration.toInt(), calcedCaloriesBurned)))
                 Toast.makeText(activity, "Activity Succesfully Logged", Toast.LENGTH_SHORT).show()
             }
         }
