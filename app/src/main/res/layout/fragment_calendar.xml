@@ -7,13 +7,6 @@
     tools:context=".CalendarFragment"
     android:padding="12dp">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
     <CalendarView
         android:id="@+id/cvCalendar"
         android:layout_width="wrap_content"
@@ -35,6 +28,7 @@
         android:id="@+id/rvActivities"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         app:layout_constraintTop_toBottomOf="@+id/tvExercise"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,6 +48,7 @@
         android:id="@+id/rvDiets"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         app:layout_constraintTop_toBottomOf="@+id/tvDiet"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -32,20 +32,6 @@ class DietLogFragment : Fragment() {
         val dietMap = application.dietMap
         with(binding) {
                 addDiet.setOnClickListener {
-                    val today = Calendar.getInstance()
-                    val year = today.get(Calendar.YEAR)
-                    val month = today.get(Calendar.MONTH)
-                    val day = today.get(Calendar.DAY_OF_MONTH)
-                    val todayDate = "$month/" +
-                            "$day/" +
-                            "$year"
-                    Log.i("fdsa", todayDate)
-                    val dietToAdd = DietObj("fdsa", 2300)
-                    if(dietMap[todayDate] == null) {
-                        dietMap[todayDate] = mutableListOf(dietToAdd)
-                    } else {
-                        dietMap[todayDate]?.add(dietToAdd)
-                    }
 
                     binding.dietText.text = dietText.text
                     // dataRepository.dietLog = dietText.text.toString()
