@@ -20,9 +20,8 @@ class DietListAdapter(private var listOfDiet: List<DietObj>): RecyclerView.Adapt
 
         // Setting each item view
         with(holder.binding) {
-            tvName.text = diet.food
+            tvName.text = "${diet.food}: "
             tvCalories.text = "${diet.calories} Calories"
-            tvAmount.text = "${diet.amount} ${diet.units}"
         }
     }
 

@@ -33,7 +33,7 @@
         />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvActivities"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tvExercise"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
         />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvDiets"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tvDiet"
         app:layout_constraintStart_toStartOf="parent"

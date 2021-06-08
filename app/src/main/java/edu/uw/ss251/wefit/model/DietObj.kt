@@ -7,6 +7,4 @@ import kotlinx.parcelize.Parcelize
 data class DietObj (
     val food: String,
     val calories: Int,
-    val amount: Int,
-    val units: String
 ): Parcelable

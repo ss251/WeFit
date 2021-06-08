@@ -2,6 +2,7 @@ package edu.uw.ss251.wefit
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import edu.uw.ss251.wefit.databinding.ActivityMainBinding
 
