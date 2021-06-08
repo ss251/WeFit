@@ -11,8 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WeFit">
         <activity android:name=".onboard.WeightActivity" />
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".onboard.GetNameActivity">
+        <activity android:name=".onboard.GetNameActivity">        </activity>
+        <activity android:name=".MainActivity">
         <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

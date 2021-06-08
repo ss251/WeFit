@@ -7,5 +7,5 @@ import kotlinx.android.parcel.Parcelize
 data class Exercise(
     val name: String,
     val duration: Int,
-    val intensity: Int // low: 3, med: 5, high: 7
+    val calories_burned: Int,
 ): Parcelable
